@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#2b170b">
+  <meta name="description" content="Thiệp cưới phong cách điện ảnh ánh vàng, điêu khắc giấy, mở thiệp và khám phá chuyện tình.">
+  <title>Vũ & Thương | Thiệp cưới</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <script>document.documentElement.classList.add("js-enabled")</script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="effects" aria-hidden="true"></canvas>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Thiệp thật bằng giấy ép hoa, mở hai cánh khi chạm dấu Hỷ -->
+  <div id="entry" class="entry-screen" role="dialog" aria-modal="true" aria-label="Mở thiệp cưới">
+    <div class="entry-content entry-content-gate entry-minimal">
+      <p id="entryGuest" class="entry-hidden-text">Trân trọng kính mời</p>
+      <div class="invitation-gate invitation-gate-full" id="envelope" aria-label="Thiệp cưới trắng và hồng cánh sen">
+        <div class="gate-door gate-left" aria-hidden="true">
+          <div class="door-inner">
+            <div class="paper-emboss paper-emboss-left"></div>
+            <div class="paper-foil-border"></div>
+          </div>
+          <div class="door-back" aria-hidden="true"></div>
+        </div>
+        <div class="gate-door gate-right" aria-hidden="true">
+          <div class="door-inner">
+            <div class="paper-emboss paper-emboss-right"></div>
+            <div class="paper-foil-border"></div>
+          </div>
+          <div class="door-back" aria-hidden="true"></div>
+        </div>
+        <!-- Vùng chạm lớn hơn mặt dấu: cả ngón tay chạm gần chữ Hỷ vẫn mở được. -->
+        <div class="seal-touch-zone" aria-hidden="true">
+          <span class="seal-button seal-button-minimal seal-art" aria-hidden="true">
+            <span class="seal-rim" aria-hidden="true"></span>
+            <svg class="seal-glyph" viewBox="0 0 1000 1000" role="presentation" focusable="false" aria-hidden="true"><path d="M159 481H382V397H159ZM613 481H843V397H613ZM237 839V763H53V705H237V638H78V581H465V638H306V705H485V763H306V839ZM94 533V345H169L134 335C146 312 158 284 166 259H40V201H485V259H373C384 282 396 310 409 338L380 345H451V533ZM230 259C223 284 208 318 193 345H344C336 319 321 285 310 259ZM92 151V-80H160V-51H384V-79H453V151ZM160 2V100H384V2ZM690 839V763H509V705H690V638H532V581H925V638H760V705H949V763H760V839ZM547 533V345H623L587 336C599 313 611 284 619 259H504V201H960V259H833L871 339L845 345H912V533ZM682 259C675 284 660 318 646 345H804C796 319 781 285 769 259ZM542 151V-80H610V-51H845V-79H915V151ZM610 2V100H845V2Z" fill="#c91535" transform="translate(0 870) scale(1 -1)"/></svg>
+          </span>
+        </div>
+      </div>
+      <input type="checkbox" id="openInvitation" class="opening-switch" aria-label="Mở thiệp cưới" autocomplete="off">
+      <label for="openInvitation" class="opening-hit-area" aria-label="Chạm để mở thiệp cưới"></label>
+    </div>
+  </div>
+
+  <div id="site" class="site-shell is-hidden">
+    <header class="header" id="top">
+      <a href="#top" class="brand" aria-label="Về đầu trang"><span class="brand-orbit">✦</span><span>VŨ <span class="brand-soft">&amp; THƯƠNG</span></span></a>
+      <div class="header-actions">
+        <button id="replayOpening" class="icon-button" type="button" aria-label="Xem lại hiệu ứng mở thiệp" title="Xem lại hiệu ứng mở thiệp">↻</button>
+        <button id="musicToggle" class="icon-button" type="button" aria-label="Bật nhạc nền" title="Bật / tắt nhạc"><span id="musicIcon">♫</span></button>
+        <button id="themeToggle" class="icon-button" type="button" aria-label="Đổi giao diện" title="Đổi ngày / đêm">☼</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section-wrap" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> MỘT CHUYỆN TÌNH · MỘT ĐỜI BÊN NHAU</div>
+          <div class="hero-kicker">CHUYỆN TÌNH CỦA CHÚNG MÌNH</div>
+          <h1 id="heroTitle" class="title-image-v28" aria-label="Vũ và Thương"><span class="title-graphic-v28"><img class="title-graphic-img-v28 animated-lettering-v33" src="assets/title-vu-thuong-sunbeam.png" width="1000" height="569" alt="Vũ & Thương" decoding="async" fetchpriority="high"></span><span class="title-screenreader-v28"><span id="groomHero">Vũ</span> và <span id="brideHero">Thương</span></span></h1>
+          <p class="hero-description">Một sợi chỉ đỏ nối hai người xa lạ. Hôm nay, chúng mình mời bạn chứng kiến ngày thành đôi.</p>
+          <div class="hero-meta"><span class="meta-line"></span><span id="heroDate">14 THÁNG 02, 2027</span><span class="meta-line"></span></div>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#countdown">Xem ngày hẹn <span>↗</span></a>
+            <button class="btn btn-ghost" id="shareInvite" type="button">⌁ Chia sẻ thiệp</button>
+          </div>
+          <div class="guest-tag"><span>✉</span> <span id="heroGuest">Một lời mời dành cho bạn</span></div>
+        </div>
+        <div class="fate-art cinematic-art" role="img" aria-label="Cặp đôi cưới bằng điêu khắc giấy dưới nắng vàng">
+          <div class="sunbeam sunbeam-a" aria-hidden="true"></div>
+          <div class="sunbeam sunbeam-b" aria-hidden="true"></div>
+          <div class="hero-portrait hero-couple-2d" aria-hidden="true"><img class="couple-wind-gif-v45" src="assets/vu-thuong-couple-veil-nod-v45.gif" width="690" height="768" alt="" loading="eager" decoding="async"></div>
+          <span class="fate-illustration-label">VŨ &amp; THƯƠNG · RED THREAD OF FATE</span>
+        </div>
+        <div class="hero-scroll">KHÁM PHÁ CÂU CHUYỆN <span>↓</span></div>
+      </section>
+
+      <section id="countdown" class="countdown-banner" aria-label="Đếm ngược đến ngày cưới">
+        <div><span class="mini-label">SAVE THE DATE</span><h2>Ngày vui của chúng mình</h2></div>
+        <div class="countdown" id="countdownClock">
+          <div><strong id="days">000</strong><span>NGÀY</span></div><i>:</i><div><strong id="hours">00</strong><span>GIỜ</span></div><i>:</i><div><strong id="mins">00</strong><span>PHÚT</span></div><i>:</i><div><strong id="secs">00</strong><span>GIÂY</span></div>
+        </div>
+      </section>
+
+
+      <!-- V55: chỉ thông tin hai gia đình, không hình nền hay thẻ giấy -->
+      <section id="families" class="family-text-section section-wrap" aria-labelledby="familiesTitle" data-reveal-section>
+        <div class="family-text-heading family-fade-item">
+          <span class="family-text-kicker family-fade-item">TRÂN TRỌNG KÍNH MỜI</span>
+          <h2 id="familiesTitle" class="family-editorial-title family-fade-item"><span class="family-title-first">Hai nhà</span><span class="family-title-second"><span class="family-title-stroke" aria-hidden="true"></span><em>một duyên</em><span class="family-title-stroke" aria-hidden="true"></span></span></h2>
+          <p>Hai gia đình trân trọng kính mời quý khách chung vui cùng Vũ &amp; Thương.</p>
+        </div>
+        <div class="family-text-columns">
+          <section class="family-text-side family-fade-item" aria-labelledby="groomFamilyTitle">
+            <h3 id="groomFamilyTitle">Nhà trai</h3>
+            <div class="family-text-info"><span>ÔNG BÀ</span><strong id="groomParents">Thông tin đang cập nhật</strong></div>
+            <div class="family-text-info"><span>ĐỊA CHỈ</span><p id="groomFamilyAddress">Địa chỉ nhà trai đang cập nhật</p></div>
+            <div class="family-text-info"><span>THỜI GIAN</span><p id="groomFamilyTime">Đang cập nhật</p></div>
+          </section>
+          <span class="family-text-divider family-fade-item" aria-hidden="true"><span>♥</span></span>
+          <section class="family-text-side family-fade-item" aria-labelledby="brideFamilyTitle">
+            <h3 id="brideFamilyTitle">Nhà gái</h3>
+            <div class="family-text-info"><span>ÔNG BÀ</span><strong id="brideParents">Thông tin đang cập nhật</strong></div>
+            <div class="family-text-info"><span>ĐỊA CHỈ</span><p id="brideFamilyAddress">Địa chỉ nhà gái đang cập nhật</p></div>
+            <div class="family-text-info"><span>THỜI GIAN</span><p id="brideFamilyTime">Đang cập nhật</p></div>
+          </section>
+        </div>
+        <p class="family-text-closing family-fade-item">Sự hiện diện của bạn là niềm hạnh phúc của hai gia đình.</p>
+      </section>
+</main>
+    <footer class="footer"><span class="footer-ornament">✦</span><div class="footer-names" id="footerNames">Vũ &amp; Thương</div><p>Hẹn gặp bạn trong ngày hạnh phúc.</p><span id="footerDate">14 · 02 · 2027</span><div class="footer-bottom"><span>MADE WITH ♡ • WEDDING QUEST</span><a href="#top">Lên đầu trang ↑</a></div></footer>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script src="v16.js"></script>
+</body>
+</html>
