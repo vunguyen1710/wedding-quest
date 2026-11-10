@@ -1,16 +1,12 @@
-# Wedding Quest V64 — Sửa hiển thị iPhone
+# Wedding Quest V65 — tiêu đề vàng kim Nhà trai / Nhà gái
 
-**Bản sửa phần “Từ hai nhà, thành một duyên”.** Hai thanh gấp khúc nối nhau, hai đèn trượt ra rồi rọi sáng thông tin hai gia đình.
+- Giữ toàn bộ V64: hai thanh gấp khúc nối nhau, hai đèn trượt ra và chiếu sáng thông tin hai gia đình.
+- Hai ảnh tiêu đề **cùng thiết kế đối xứng**, cắt từ tác phẩm vàng kim đã duyệt, tối ưu WebP có nền trong suốt.
+- `index.html` bao gồm CSS cục bộ cho phần tiêu đề mới, giúp iPhone ít bị lỗi cache CSS; nguồn ảnh nằm ở `assets/family-title-groom-v65.webp` và `assets/family-title-bride-v65.webp`.
+- Dùng `config.js` để sửa thông tin đại diện, địa chỉ, thời gian của hai gia đình.
 
-- Trên iPhone các thông tin Nhà trai / Nhà gái hiển thị **hai cột song song**, nhãn và nội dung nằm riêng dòng, kích thước chữ vừa màn hình.
-- CSS và script của section được **nhúng trong `index.html`** để tránh việc máy iPhone dùng CSS cũ; các asset bên ngoài được gắn `?v=64`.
-- Mọi ảnh, giao diện hero, nhạc và hiệu ứng mở thiệp giữ nguyên.
-- Có nút **Xem lại khoảnh khắc kết nối**.
+## Đăng GitHub Pages
 
-## Triển khai GitHub Pages
+Mở ZIP và đưa **toàn bộ file ở thư mục gốc của ZIP** lên repository `wedding-quest` (bao gồm thư mục `assets`). **Quan trọng:** cần tải lên **hai ảnh mới** trong `assets` và thay `index.html`, để trang không bị thiếu tiêu đề.
 
-Giải nén ZIP, vào thư mục `Wedding-Quest-v64-source` rồi tải **các file BÊN TRONG** (không tải cả thư mục bao ngoài) lên thư mục gốc của repo `wedding-quest`. Ghi đè `index.html`, `style.css`, `app.js` và các file còn lại. Để bảo đảm GitHub Pages cập nhật, tối thiểu cần cập nhật `index.html`; nên cập nhật đồng bộ 3 file.
-
-Kiểm tra bằng cách truy cập `https://vunguyen1710.github.io/wedding-quest/?v=64` sau khi GitHub Actions báo deploy thành công. Đây là cùng trang, tham số v=64 giúp bỏ qua cache HTML cũ. Trên iPhone có thể đóng tab và mở lại nếu máy vẫn dùng phiên bản cũ.
-
-Thông tin hai nhà nằm trong `config.js` ở các khóa `family.groomParents`, `family.brideParents`, `family.groomAddress`, `family.brideAddress`, `family.groomTime`, `family.brideTime`.
+Sau khi cập nhật và triển khai thành công, mở `https://vunguyen1710.github.io/wedding-quest/?v=65`.

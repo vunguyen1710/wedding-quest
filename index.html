@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <script>document.documentElement.classList.add("js-enabled")</script>
-  <link rel="stylesheet" href="style.css?v=64">
+  <link rel="stylesheet" href="style.css?v=65">
   <style id="family-v64-styles">/* V64 — iPhone/desktop spotlight stage. Overrides are self-contained in index.html. */
 .family-mechanism{position:relative;padding:64px 0 90px;scroll-margin-top:75px;overflow:hidden;isolation:isolate}
 .family-mechanism::before{content:"";position:absolute;inset:11% 0 8%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,rgba(163,85,24,.16),transparent 69%)}
@@ -63,6 +63,14 @@
 }
 @media(max-width:360px){.fam-reveal-details{gap:8px;padding-top:104px}.fam-details{padding:14px 5px 10px}.fam-info strong{font-size:12.5px}}
 @media(prefers-reduced-motion:reduce){.fam-center-spark,.fam-lamp .fam-light-cone,.fam-lamp .fam-light-floor,.fam-lamp .fam-lamp-glimmer,.fam-details{transition:none!important}.family-mechanism.fam-armed .fam-details{opacity:1!important;transform:none!important}}
+
+
+/* V65 — matched golden image titles, keeping both lamps and articulated rods intact. */
+#families .fam-info-kicker{display:none!important}
+#families .fam-details .fam-art-title{display:block;width:calc(100% + 22px);max-width:440px;height:auto;object-fit:contain;margin:-32px auto -14px;position:relative;z-index:2;filter:drop-shadow(0 7px 9px rgba(30,10,1,.23));pointer-events:none}
+#families .fam-details h3.fam-title-screenreader{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}
+@media(max-width:760px){#families .fam-details .fam-art-title{width:calc(100% + 12px);max-width:none;margin:-18px auto -5px}#families .fam-details{padding-top:16px}}
+@media(max-width:360px){#families .fam-details .fam-art-title{width:calc(100% + 8px)}}
 </style>
 </head>
 <body>
@@ -202,13 +210,13 @@
         </div>
         <div class="fam-reveal-details">
           <section class="fam-details fam-details-groom" aria-labelledby="groomFamilyTitle">
-            <span class="fam-info-kicker">GIA ĐÌNH</span><h3 id="groomFamilyTitle">Nhà trai</h3>
+            <h3 id="groomFamilyTitle" class="fam-title-screenreader">Nhà trai</h3><img class="fam-art-title" src="assets/family-title-groom-v65.webp" width="848" height="631" alt="Gia đình nhà trai" decoding="async" loading="eager">
             <div class="fam-info"><span>ÔNG BÀ</span><strong id="groomParents">Thông tin đang cập nhật</strong></div>
             <div class="fam-info"><span>ĐỊA CHỈ</span><p id="groomFamilyAddress">Địa chỉ nhà trai đang cập nhật</p></div>
             <div class="fam-info"><span>THỜI GIAN</span><p id="groomFamilyTime">Đang cập nhật</p></div>
           </section>
           <section class="fam-details fam-details-bride" aria-labelledby="brideFamilyTitle">
-            <span class="fam-info-kicker">GIA ĐÌNH</span><h3 id="brideFamilyTitle">Nhà gái</h3>
+            <h3 id="brideFamilyTitle" class="fam-title-screenreader">Nhà gái</h3><img class="fam-art-title" src="assets/family-title-bride-v65.webp" width="848" height="631" alt="Gia đình nhà gái" decoding="async" loading="eager">
             <div class="fam-info"><span>ÔNG BÀ</span><strong id="brideParents">Thông tin đang cập nhật</strong></div>
             <div class="fam-info"><span>ĐỊA CHỈ</span><p id="brideFamilyAddress">Địa chỉ nhà gái đang cập nhật</p></div>
             <div class="fam-info"><span>THỜI GIAN</span><p id="brideFamilyTime">Đang cập nhật</p></div>
@@ -222,8 +230,8 @@
     <footer class="footer"><span class="footer-ornament">✦</span><div class="footer-names" id="footerNames">Vũ &amp; Thương</div><p>Hẹn gặp bạn trong ngày hạnh phúc.</p><span id="footerDate">14 · 02 · 2027</span><div class="footer-bottom"><span>MADE WITH ♡ • WEDDING QUEST</span><a href="#top">Lên đầu trang ↑</a></div></footer>
   </div>
 
-  <script src="config.js?v=64"></script>
-  <script src="app.js?v=64"></script>
+  <script src="config.js?v=65"></script>
+  <script src="app.js?v=65"></script>
   <script id="family-v64-script">// V63: articulated mechanism animation, real-time SVG geometry, once on viewport entrance.
 (function(){
   const section=document.getElementById('families'), svg=document.getElementById('famArt');
@@ -295,6 +303,6 @@
 })();
 
 </script>
-  <script src="v16.js?v=64"></script>
+  <script src="v16.js?v=65"></script>
 </body>
 </html>
