@@ -66,38 +66,46 @@ share?.addEventListener('click',async()=>{
 const theme=$('themeToggle');
 theme?.addEventListener('click',()=>{const next=document.body.dataset.theme==='day'?'night':'day';document.body.dataset.theme=next;theme.textContent=next==='day'?'☾':'☼'});
 
-// V60: first-view fade; reliable scroll, touch, direct file viewing, and no hidden content without JS.
-const familySection = document.getElementById('families');
+// V61: one-time opposing slides when the two-family section enters the viewport.
+// Arm only after the site becomes interactive, with a visible-content fallback.
+const familySection=document.getElementById('families');
 if(familySection){
-  let fired=false, timeout=null;
-  const reduced=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function checkFamily(){
-    if(fired || site.classList.contains('is-hidden')) return;
+  let entered=false,armed=false;
+  const reduce=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  function finalize(){
+    familySection.classList.remove('family-slide-prep','family-slide-in');
+    familySection.classList.add('family-slide-done');
+  }
+  function begin(){
+    if(entered)return;
+    entered=true;
+    if(reduce){finalize();return;}
+    // Start just after the off-screen positions have painted.
+    familySection.classList.add('family-slide-in');
+    familySection.classList.remove('family-slide-prep');
+    setTimeout(finalize,1900);
+    window.removeEventListener('scroll',check,{passive:true});
+    window.removeEventListener('resize',check);
+    window.removeEventListener('touchmove',check,{passive:true});
+  }
+  function check(){
+    if(entered || site.classList.contains('is-hidden') || site.inert)return;
     const r=familySection.getBoundingClientRect();
-    const vh=window.innerHeight || document.documentElement.clientHeight || 800;
-    // Starts when the section actually becomes visible; nearby page bottom works too.
-    if(r.top<vh*.88 && r.bottom>vh*.10){
-      fired=true;
-      familySection.classList.add('family-fade-active');
-      familySection.classList.remove('family-fade-armed');
-      // Reset and trigger CSS animation explicitly after the page is visible.
-      familySection.classList.add('family-fade-armed');
-      timeout=setTimeout(()=>{familySection.classList.remove('family-fade-armed','family-fade-active');familySection.classList.add('family-fade-done');},2900);
-      window.removeEventListener('scroll',checkFamily);
-      window.removeEventListener('touchmove',checkFamily);
-      window.removeEventListener('resize',checkFamily);
-    }
+    const height=window.innerHeight||document.documentElement.clientHeight||700;
+    // Trigger only when heading + cards have arrived inside the visible viewport.
+    if(r.top < height*.78 && r.bottom > height*.22)begin();
   }
-  if(!reduced){familySection.classList.add('family-fade-armed');
-    window.addEventListener('scroll',checkFamily,{passive:true});
-    window.addEventListener('touchmove',checkFamily,{passive:true});
-    window.addEventListener('resize',checkFamily,{passive:true});
-    document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkFamily()});
-    setTimeout(checkFamily,4800);
+  if(reduce){finalize()}else{
+    // Arm immediately but do not hide the region if the browser blocks scripting.
+    familySection.classList.add('family-slide-prep');armed=true;
+    window.addEventListener('scroll',check,{passive:true});
+    window.addEventListener('touchmove',check,{passive:true});
+    window.addEventListener('resize',check);
+    document.addEventListener('visibilitychange',()=>{if(!document.hidden)check()});
+    // Opening gate / scrolling from anchors may reveal this region asynchronously.
+    const poll=setInterval(()=>{check();if(entered)clearInterval(poll)},350);
+    setTimeout(()=>clearInterval(poll),16000); // Keep scroll listeners active for slow readers.
   }
-  else familySection.classList.add('family-fade-done');
-  // ensure first paint isn't permanently hidden in constrained preview environments
-  setTimeout(()=>{if(!fired && !reduced){const r=familySection.getBoundingClientRect();if(r.top < (innerHeight||800))checkFamily()}},8000);
 }
 
 // Compact ambient melody: only plays after a direct user tap.

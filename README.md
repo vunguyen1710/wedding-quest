@@ -275,3 +275,6 @@ V55: Bỏ hoàn toàn ảnh nền lá thư ở phần gia đình; chỉ còn vă
 
 ## V59
 Cuộn tới phần hai gia đình sẽ khởi chạy fade-in trong ~2 giây; đã bỏ logic nhảy 100% khi chạm cuối trang.
+
+
+V61: Nhà trai trượt từ trái, Nhà gái từ phải khi cuộn tới; phát một lần, giữ nguyên bố cục ngang.
