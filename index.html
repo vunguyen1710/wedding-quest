@@ -87,64 +87,81 @@
           <div><strong id="days">000</strong><span>NGÀY</span></div><i>:</i><div><strong id="hours">00</strong><span>GIỜ</span></div><i>:</i><div><strong id="mins">00</strong><span>PHÚT</span></div><i>:</i><div><strong id="secs">00</strong><span>GIÂY</span></div>
         </div>
       </section>
-      <section id="families" class="family-diamond-section section-wrap" aria-labelledby="familiesTitle">
-        <div class="family-diamond-heading">
-          <span class="family-diamond-kicker">TRÂN TRỌNG KÍNH MỜI</span>
-          <h2 id="familiesTitle" class="family-diamond-title"><span>Hai nhà,</span> <em>một duyên</em></h2>
-          <p>Hai gia đình hân hoan gửi đến bạn lời mời chung vui trong ngày trọng đại của Vũ &amp; Thương.</p>
+
+
+      <!-- V63: Two articulated gold rods join; antique brass lanterns reveal both families -->
+      <section id="families" class="family-mechanism section-wrap" aria-labelledby="familiesTitle">
+        <div class="fam-title">
+          <span class="fam-overline">TRÂN TRỌNG KÍNH MỜI</span>
+          <h2 id="familiesTitle">Từ hai nhà <em>thành một duyên</em></h2>
+          <p>Hai gia đình hân hoan kính mời quý khách chung vui trong ngày trọng đại của Vũ &amp; Thương.</p>
         </div>
-
-        <div class="family-diamond-stage">
-          <section class="family-diamond-card family-diamond-card--left" aria-labelledby="groomFamilyTitle">
-            <div class="family-diamond-card-inner">
-              <span class="family-diamond-card-kicker">GROOM'S FAMILY</span>
-              <h3 id="groomFamilyTitle">Nhà trai</h3>
-              <div class="family-diamond-list">
-                <div class="family-diamond-row">
-                  <span>ĐẠI DIỆN</span>
-                  <strong id="groomParents">Thông tin đang cập nhật</strong>
-                </div>
-                <div class="family-diamond-row">
-                  <span>ĐỊA CHỈ</span>
-                  <p id="groomFamilyAddress">Địa chỉ nhà trai đang cập nhật</p>
-                </div>
-                <div class="family-diamond-row">
-                  <span>THỜI GIAN</span>
-                  <p id="groomFamilyTime">Đang cập nhật</p>
-                </div>
-              </div>
-            </div>
+        <div class="fam-mechanism" aria-hidden="true">
+          <svg id="famArt" viewBox="0 0 1000 252" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="famMetal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0c0"/><stop offset=".27" stop-color="#eac589"/><stop offset=".55" stop-color="#b87d38"/><stop offset=".82" stop-color="#f5d396"/><stop offset="1" stop-color="#68401a"/></linearGradient>
+              <linearGradient id="famBeam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9b5" stop-opacity=".55"/><stop offset=".55" stop-color="#f7cb83" stop-opacity=".19"/><stop offset="1" stop-color="#ffda98" stop-opacity="0"/></linearGradient>
+              <radialGradient id="famLampGold"><stop offset="0" stop-color="#fff8d7"/><stop offset=".35" stop-color="#f7d48a"/><stop offset="1" stop-color="#8f5527"/></radialGradient>
+              <filter id="famGlow"><feGaussianBlur stdDeviation="8"/></filter>
+              <filter id="famSmallGlow"><feGaussianBlur stdDeviation="2.8"/></filter>
+            </defs>
+            <g opacity=".95">
+              <path id="famRodLeftShade" d="" fill="none" stroke="#4d2a0d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+              <path id="famRodRightShade" d="" fill="none" stroke="#4d2a0d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+              <path id="famRodLeft" d="" fill="none" stroke="url(#famMetal)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="famRodRight" d="" fill="none" stroke="url(#famMetal)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="famRodLeftShine" d="" fill="none" stroke="#fff0b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
+              <path id="famRodRightShine" d="" fill="none" stroke="#fff0b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
+              <g id="famJointsLeft"></g><g id="famJointsRight"></g>
+              <circle cx="54" cy="74" r="14" fill="url(#famMetal)" stroke="#ffdea0" stroke-width="2"/>
+              <circle cx="946" cy="74" r="14" fill="url(#famMetal)" stroke="#ffdea0" stroke-width="2"/>
+              <circle cx="54" cy="74" r="4" fill="#674014"/>
+              <circle cx="946" cy="74" r="4" fill="#674014"/>
+            </g>
+            <g class="fam-center-spark">
+              <circle cx="500" cy="74" r="29" fill="#e4ad62" opacity=".36" filter="url(#famGlow)"/>
+              <circle cx="500" cy="74" r="17" fill="url(#famLampGold)" stroke="#fff2d2" stroke-width="1.4"/>
+              <circle cx="500" cy="74" r="7" fill="#9c2c28"/>
+              <path d="M496 74h8 M500 70v8" stroke="#ffe7b9" stroke-width="1.5"/>
+            </g>
+            <g id="famLampLeft" class="fam-lamp fam-lamp-left" transform="translate(500 74)">
+              <path class="fam-light-cone" d="M-12 18 L-188 236 L182 236 L12 18 Z" fill="url(#famBeam)"/>
+              <ellipse class="fam-light-floor" cx="0" cy="228" rx="164" ry="14" fill="#ffd58a" filter="url(#famGlow)" opacity=".45"/>
+              <path d="M-17 0v14 M17 0v14" stroke="#b07837" stroke-width="5"/>
+              <rect x="-28" y="-10" width="56" height="20" rx="8" fill="url(#famMetal)" stroke="#ffe7b5" stroke-width="1.8"/>
+              <path d="M-27 14Q0 5 27 14L46 36Q0 64-46 36Z" fill="url(#famMetal)" stroke="#fff0b9" stroke-width="2"/>
+              <ellipse cx="0" cy="39" rx="44" ry="10" fill="#fbd38b" stroke="#73411b" stroke-width="3"/>
+              <ellipse cx="0" cy="39" rx="27" ry="5.5" fill="#fff4c9" opacity=".75"/>
+              <circle class="fam-lamp-glimmer" cx="0" cy="45" r="8" fill="#fff5ca" filter="url(#famSmallGlow)"/>
+            </g>
+            <g id="famLampRight" class="fam-lamp fam-lamp-right" transform="translate(500 74)">
+              <path class="fam-light-cone" d="M-12 18 L-188 236 L182 236 L12 18 Z" fill="url(#famBeam)"/>
+              <ellipse class="fam-light-floor" cx="0" cy="228" rx="164" ry="14" fill="#ffd58a" filter="url(#famGlow)" opacity=".45"/>
+              <path d="M-17 0v14 M17 0v14" stroke="#b07837" stroke-width="5"/>
+              <rect x="-28" y="-10" width="56" height="20" rx="8" fill="url(#famMetal)" stroke="#ffe7b5" stroke-width="1.8"/>
+              <path d="M-27 14Q0 5 27 14L46 36Q0 64-46 36Z" fill="url(#famMetal)" stroke="#fff0b9" stroke-width="2"/>
+              <ellipse cx="0" cy="39" rx="44" ry="10" fill="#fbd38b" stroke="#73411b" stroke-width="3"/>
+              <ellipse cx="0" cy="39" rx="27" ry="5.5" fill="#fff4c9" opacity=".75"/>
+              <circle class="fam-lamp-glimmer" cx="0" cy="45" r="8" fill="#fff5ca" filter="url(#famSmallGlow)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="fam-reveal-details">
+          <section class="fam-details fam-details-groom" aria-labelledby="groomFamilyTitle">
+            <span class="fam-info-kicker">GIA ĐÌNH</span><h3 id="groomFamilyTitle">Nhà trai</h3>
+            <div class="fam-info"><span>ÔNG BÀ</span><strong id="groomParents">Thông tin đang cập nhật</strong></div>
+            <div class="fam-info"><span>ĐỊA CHỈ</span><p id="groomFamilyAddress">Địa chỉ nhà trai đang cập nhật</p></div>
+            <div class="fam-info"><span>THỜI GIAN</span><p id="groomFamilyTime">Đang cập nhật</p></div>
           </section>
-
-          <div class="family-diamond-center" aria-hidden="true">
-            <span class="family-diamond-center-line"></span>
-            <span class="family-diamond-center-heart">♥</span>
-            <span class="family-diamond-center-line"></span>
-          </div>
-
-          <section class="family-diamond-card family-diamond-card--right" aria-labelledby="brideFamilyTitle">
-            <div class="family-diamond-card-inner">
-              <span class="family-diamond-card-kicker">BRIDE'S FAMILY</span>
-              <h3 id="brideFamilyTitle">Nhà gái</h3>
-              <div class="family-diamond-list">
-                <div class="family-diamond-row">
-                  <span>ĐẠI DIỆN</span>
-                  <strong id="brideParents">Thông tin đang cập nhật</strong>
-                </div>
-                <div class="family-diamond-row">
-                  <span>ĐỊA CHỈ</span>
-                  <p id="brideFamilyAddress">Địa chỉ nhà gái đang cập nhật</p>
-                </div>
-                <div class="family-diamond-row">
-                  <span>THỜI GIAN</span>
-                  <p id="brideFamilyTime">Đang cập nhật</p>
-                </div>
-              </div>
-            </div>
+          <section class="fam-details fam-details-bride" aria-labelledby="brideFamilyTitle">
+            <span class="fam-info-kicker">GIA ĐÌNH</span><h3 id="brideFamilyTitle">Nhà gái</h3>
+            <div class="fam-info"><span>ÔNG BÀ</span><strong id="brideParents">Thông tin đang cập nhật</strong></div>
+            <div class="fam-info"><span>ĐỊA CHỈ</span><p id="brideFamilyAddress">Địa chỉ nhà gái đang cập nhật</p></div>
+            <div class="fam-info"><span>THỜI GIAN</span><p id="brideFamilyTime">Đang cập nhật</p></div>
           </section>
         </div>
-
-        <p class="family-diamond-closing">Sự hiện diện của bạn là niềm vinh hạnh và hạnh phúc của hai gia đình.</p>
+        <p class="fam-footnote">Hai gia đình, một niềm hạnh phúc.</p>
+        <button id="famReplay" class="fam-replay" type="button" aria-label="Xem lại hiệu ứng kết nối hai gia đình">↻ Xem lại khoảnh khắc kết nối</button>
       </section>
 </main>
     <footer class="footer"><span class="footer-ornament">✦</span><div class="footer-names" id="footerNames">Vũ &amp; Thương</div><p>Hẹn gặp bạn trong ngày hạnh phúc.</p><span id="footerDate">14 · 02 · 2027</span><div class="footer-bottom"><span>MADE WITH ♡ • WEDDING QUEST</span><a href="#top">Lên đầu trang ↑</a></div></footer>

@@ -846,70 +846,52 @@ html{scroll-behavior:smooth}
 
 
 
-/* V62 — luxurious dual diamond papers for two families */
-.family-diamond-section{padding:76px 0 96px;scroll-margin-top:86px;position:relative}
-.family-diamond-heading{text-align:center;max-width:760px;margin:0 auto 54px}
-.family-diamond-kicker{display:block;margin:0 0 18px;font:600 10px/1.6 'Be Vietnam Pro',Arial,sans-serif;letter-spacing:.34em;color:#e8b875}
-.family-diamond-title{margin:0 0 18px;font:400 clamp(46px,6vw,78px)/1.02 'Playfair Display',Georgia,serif;letter-spacing:-.045em;color:#f8ebd7}
-.family-diamond-title em{font-style:italic;font-weight:400;color:#efbc74}
-.family-diamond-heading p{max-width:560px;margin:0 auto;color:#e5cbab;font-size:13px;line-height:1.9}
-.family-diamond-stage{display:grid;grid-template-columns:minmax(0,1fr) 84px minmax(0,1fr);gap:clamp(10px,2.8vw,34px);align-items:center;max-width:1040px;margin:0 auto}
-.family-diamond-card{position:relative;width:min(100%,360px);aspect-ratio:1/1;margin:0 auto;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);background:linear-gradient(145deg,rgba(255,236,200,.98) 0%,rgba(241,204,140,.97) 28%,rgba(214,160,85,.96) 56%,rgba(137,81,31,.95) 100%);box-shadow:0 30px 56px rgba(0,0,0,.28), inset 0 2px 1px rgba(255,255,255,.4), inset 0 -18px 26px rgba(111,60,18,.24);overflow:hidden;isolation:isolate;transition:transform 1.15s cubic-bezier(.2,.8,.2,1),opacity 1.15s cubic-bezier(.2,.8,.2,1),filter .7s ease}
-.family-diamond-card::before{content:"";position:absolute;inset:16px;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);border:1px solid rgba(116,68,28,.35);background:linear-gradient(135deg,rgba(255,255,255,.15),transparent 28%,rgba(120,66,24,.09) 78%,rgba(255,255,255,.05));pointer-events:none}
-.family-diamond-card::after{content:"";position:absolute;inset:-12%;background:radial-gradient(circle at 28% 24%,rgba(255,255,255,.38),transparent 23%),linear-gradient(130deg,rgba(255,255,255,.15) 0%,transparent 36%,rgba(120,66,24,.15) 100%);mix-blend-mode:screen;opacity:.86;pointer-events:none}
-.family-diamond-card-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:18% 17%;text-align:center;z-index:1}
-.family-diamond-card-kicker{display:block;margin:0 0 12px;font:700 9px/1.5 'Be Vietnam Pro',Arial,sans-serif;letter-spacing:.34em;color:#8b582d}
-.family-diamond-card h3{margin:0 0 18px;font:400 clamp(32px,4vw,48px)/1.08 'Playfair Display',Georgia,serif;color:#4a2712}
-.family-diamond-list{display:grid;gap:14px;width:100%}
-.family-diamond-row{padding:0 8px}
-.family-diamond-row>span{display:block;margin-bottom:5px;font:700 9px/1.4 'Be Vietnam Pro',Arial,sans-serif;letter-spacing:.22em;color:#8f6135}
-.family-diamond-row strong,.family-diamond-row p{margin:0;color:#4c2c16;overflow-wrap:anywhere}
-.family-diamond-row strong{display:block;font:400 clamp(16px,2vw,24px)/1.42 'Playfair Display',Georgia,serif}
-.family-diamond-row p{font-size:13px;line-height:1.72;color:#5b3920}
-.family-diamond-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#e4a96b}
-.family-diamond-center-line{width:1px;height:66px;background:linear-gradient(180deg,transparent,rgba(225,179,109,.9),transparent)}
-.family-diamond-center-heart{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(232,184,117,.4);background:radial-gradient(circle at 30% 30%,rgba(255,239,209,.2),rgba(104,53,19,.12));font-size:18px;box-shadow:0 0 0 8px rgba(255,228,174,.03)}
-.family-diamond-closing{text-align:center;max-width:640px;margin:34px auto 0;font:italic 400 19px/1.75 'Playfair Display',Georgia,serif;color:#edc18c}
-.family-diamond-section.reveal-ready .family-diamond-heading,
-.family-diamond-section.reveal-ready .family-diamond-center,
-.family-diamond-section.reveal-ready .family-diamond-closing{opacity:0;transform:translateY(22px);transition:transform .8s ease,opacity .8s ease}
-.family-diamond-section.reveal-ready .family-diamond-card--left{opacity:0;transform:translate3d(-160px,0,0) scale(.88) rotate(-8deg);filter:blur(1.5px)}
-.family-diamond-section.reveal-ready .family-diamond-card--right{opacity:0;transform:translate3d(160px,0,0) scale(.88) rotate(8deg);filter:blur(1.5px)}
-.family-diamond-section.is-visible .family-diamond-heading,
-.family-diamond-section.is-visible .family-diamond-center,
-.family-diamond-section.is-visible .family-diamond-closing{opacity:1;transform:none}
-.family-diamond-section.is-visible .family-diamond-card--left,
-.family-diamond-section.is-visible .family-diamond-card--right{opacity:1;transform:none;filter:none}
-.family-diamond-section.is-visible .family-diamond-card--left{transition-delay:.10s}
-.family-diamond-section.is-visible .family-diamond-card--right{transition-delay:.24s}
-.family-diamond-section.is-visible .family-diamond-center{transition-delay:.36s}
-.family-diamond-section.is-visible .family-diamond-closing{transition-delay:.45s}
-@media(max-width:840px){
- .family-diamond-stage{grid-template-columns:1fr;gap:18px}
- .family-diamond-center{flex-direction:row;gap:12px}
- .family-diamond-center-line{width:70px;height:1px;background:linear-gradient(90deg,transparent,rgba(225,179,109,.9),transparent)}
-}
-@media(max-width:640px){
- .family-diamond-section{padding:58px 0 72px}
- .family-diamond-heading{margin-bottom:32px}
- .family-diamond-title{font-size:clamp(40px,12vw,58px)}
- .family-diamond-heading p{font-size:12px}
- .family-diamond-card{width:min(100%,280px)}
- .family-diamond-card-inner{padding:17% 14%}
- .family-diamond-card h3{font-size:clamp(29px,8vw,38px);margin-bottom:14px}
- .family-diamond-list{gap:11px}
- .family-diamond-row strong{font-size:clamp(15px,4.8vw,19px)}
- .family-diamond-row p{font-size:12px;line-height:1.66}
- .family-diamond-closing{font-size:16px;margin-top:24px}
- .family-diamond-section.reveal-ready .family-diamond-card--left{transform:translate3d(-86px,0,0) scale(.9) rotate(-6deg)}
- .family-diamond-section.reveal-ready .family-diamond-card--right{transform:translate3d(86px,0,0) scale(.9) rotate(6deg)}
+
+/* V63 | Hai nếp gấp - một nhịp cầu. No cards, no overlapping legacy family rules. */
+.family-mechanism{position:relative;padding:74px 0 90px;scroll-margin-top:72px;overflow:hidden;isolation:isolate}
+.family-mechanism::before{content:"";position:absolute;left:5%;right:5%;top:55%;height:400px;transform:translateY(-50%);background:radial-gradient(ellipse at center,rgba(172,97,33,.22),transparent 66%);pointer-events:none;z-index:-1}
+.fam-title{text-align:center;margin:0 auto 10px;max-width:760px}
+.fam-overline{display:block;color:#dfb878;font-size:10px;font-weight:600;letter-spacing:.36em;margin-bottom:13px}
+.fam-title h2{font:400 clamp(37px,5.7vw,72px)/1.14 'Playfair Display',Georgia,serif;color:#f4e3c5;letter-spacing:-.045em;margin:0 0 14px}
+.fam-title h2 em{font-weight:400;color:#e8b76b;white-space:nowrap}
+.fam-title p{color:#e2c79f;font-size:13px;line-height:1.9;max-width:570px;margin:0 auto}
+.fam-mechanism{position:relative;width:100%;max-width:1050px;margin:-2px auto -65px;pointer-events:none;z-index:2}
+.fam-mechanism svg{display:block;width:100%;height:auto;overflow:visible;filter:drop-shadow(0 7px 7px rgba(32,13,1,.24))}
+.fam-center-spark{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.4);transition:opacity .5s ease,transform .55s cubic-bezier(.17,1.4,.38,1)}
+.family-mechanism.fam-joined .fam-center-spark{opacity:1;transform:scale(1)}
+.fam-lamp .fam-light-cone,.fam-lamp .fam-light-floor,.fam-lamp .fam-lamp-glimmer{opacity:0;transition:opacity .95s ease}
+.family-mechanism.fam-light-on .fam-lamp .fam-light-cone{opacity:1}
+.family-mechanism.fam-light-on .fam-lamp .fam-light-floor{opacity:.65}
+.family-mechanism.fam-light-on .fam-lamp .fam-lamp-glimmer{opacity:.85}
+.fam-reveal-details{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(26px,8vw,130px);max-width:910px;margin:0 auto;position:relative;z-index:2;align-items:start}
+.fam-reveal-details::before{content:"";position:absolute;left:50%;top:0;bottom:12px;width:1px;background:linear-gradient(180deg,transparent,rgba(225,179,109,.3) 22%,rgba(225,179,109,.38) 68%,transparent);pointer-events:none}
+.fam-details{text-align:center;min-width:0;opacity:1;transform:none;transition:opacity 1.15s ease,transform 1.15s cubic-bezier(.19,.82,.18,1);padding:8px 2px 0;text-shadow:0 2px 12px rgba(0,0,0,.2)}
+.family-mechanism.fam-armed:not(.fam-info-on) .fam-details{opacity:0;transform:translateY(25px)}
+.family-mechanism.fam-info-on .fam-details{opacity:1;transform:translateY(0)}
+.family-mechanism.fam-info-on .fam-details-bride{transition-delay:.16s}
+.fam-info-kicker{display:block;font-size:10px;color:#d5a86f;letter-spacing:.38em;margin-bottom:5px;font-weight:600}
+.fam-details h3{font:400 clamp(38px,4.7vw,57px)/1.2 'Playfair Display',Georgia,serif;color:#f4d59f;margin:0 0 22px}
+.fam-info{margin-bottom:20px;overflow-wrap:anywhere}
+.fam-info>span{display:block;color:#c99453;font-size:10px;letter-spacing:.23em;font-weight:600;margin-bottom:7px}
+.fam-info strong{font:400 clamp(17px,2.7vw,29px)/1.4 'Playfair Display',Georgia,serif;color:#fff2d5;display:block}
+.fam-info p{margin:0;color:#e9cc9c;font-size:clamp(12px,1.6vw,15px);line-height:1.75}
+.fam-footnote{text-align:center;font:italic 400 21px/1.5 'Playfair Display',Georgia,serif;color:#e3bc7a;margin:26px auto 8px}
+.fam-replay{display:block;min-height:38px;margin:12px auto 0;color:#d5b27f;font-size:11px;letter-spacing:.09em;padding:8px 15px;border:1px solid rgba(225,179,109,.31);border-radius:20px;background:rgba(51,24,9,.5)}
+.fam-replay:focus-visible{outline:2px solid #fbd691;outline-offset:3px}
+@media(max-width:760px){
+ .family-mechanism{padding:58px 0 72px}
+ .fam-title h2{font-size:clamp(36px,9vw,53px)}
+ .fam-title p{font-size:12px}
+ .fam-mechanism{width:112%;max-width:none;left:-6%;margin:8px auto -37px}
+ .fam-reveal-details{gap:20px}
+ .fam-details h3{font-size:clamp(29px,7vw,42px);margin-bottom:14px}
+ .fam-info-kicker,.fam-info>span{font-size:9px}
+ .fam-info{margin-bottom:16px}
+ .fam-info strong{font-size:clamp(14px,3.9vw,20px)}
+ .fam-info p{font-size:clamp(11px,3.1vw,14px)}
+ .fam-footnote{font-size:17px}
 }
 @media(prefers-reduced-motion:reduce){
- .family-diamond-section.reveal-ready .family-diamond-heading,
- .family-diamond-section.reveal-ready .family-diamond-center,
- .family-diamond-section.reveal-ready .family-diamond-closing,
- .family-diamond-section.reveal-ready .family-diamond-card--left,
- .family-diamond-section.reveal-ready .family-diamond-card--right{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
-}
-
+ .fam-center-spark,.fam-lamp .fam-light-cone,.fam-lamp .fam-light-floor,.fam-lamp .fam-lamp-glimmer,.fam-details{transition:none!important}
+ .family-mechanism.fam-armed .fam-details{opacity:1!important;transform:none!important}
 }

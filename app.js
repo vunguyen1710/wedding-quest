@@ -37,7 +37,7 @@ function open(){
  gate.classList.add('seal-activated');
  after(1500,()=>{gate.classList.add('seal-complete','opened');entry.classList.add('opening')});
  after(4000,()=>entry.classList.add('leaving'));
- after(4480,()=>{entry.hidden=true;entry.style.display='none';entry.style.pointerEvents='none';site.inert=false;seal.disabled=false;busy=false;window.dispatchEvent(new Event('scroll'));void 0});
+ after(4480,()=>{entry.hidden=true;entry.style.display='none';entry.style.pointerEvents='none';site.inert=false;seal.disabled=false;busy=false;void 0});
 }
 seal.addEventListener('change',()=>{if(seal.checked)open()});
 entry.addEventListener('click', event=>{
@@ -66,44 +66,75 @@ share?.addEventListener('click',async()=>{
 const theme=$('themeToggle');
 theme?.addEventListener('click',()=>{const next=document.body.dataset.theme==='day'?'night':'day';document.body.dataset.theme=next;theme.textContent=next==='day'?'☾':'☼'});
 
-// V62: reveal luxurious diamond papers from both sides when scrolled into view.
-const familySection=document.getElementById('families');
-if(familySection){
-  const reduce=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-  let shown=false,observer=null,scrollHandler=null;
-  const reveal=()=>{
-    if(shown)return;
-    shown=true;
-    familySection.classList.add('is-visible');
+// V63: articulated mechanism animation, real-time SVG geometry, once on viewport entrance.
+(function(){
+  const section=document.getElementById('families'), svg=document.getElementById('famArt');
+  if(!section||!svg)return;
+  const $id=id=>document.getElementById(id);
+  const pathIds=[['famRodLeft','famRodLeftShade','famRodLeftShine'],['famRodRight','famRodRightShade','famRodRightShine']];
+  const joints=[$id('famJointsLeft'),$id('famJointsRight')];
+  const lamp=[$id('famLampLeft'),$id('famLampRight')];
+  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let started=false,finished=false,rafId=0,completeTimer=0,observer=null;
+  const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+  const ease=t=>1-Math.pow(1-clamp(t),3);
+  const oldLeft=[[54,74],[85,36],[121,106],[159,42],[196,74]];
+  const rightOld=oldLeft.map(([x,y])=>[1000-x,y]);
+  const leftEnd=[[54,74],[166,74],[278,74],[389,74],[500,74]];
+  const rightEnd=leftEnd.map(([x,y])=>[1000-x,y]);
+  function points(start,end,t){return start.map((p,i)=>[p[0]+(end[i][0]-p[0])*t,p[1]+(end[i][1]-p[1])*t])}
+  function drawRod(side,pts){
+    const d=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(2)+','+p[1].toFixed(2)).join(' ');
+    pathIds[side].forEach(id=>$id(id).setAttribute('d',d));
+    joints[side].innerHTML=pts.slice(1,-1).map(([x,y])=>'<circle cx="'+x.toFixed(2)+'" cy="'+y.toFixed(2)+'" r="7" fill="url(#famMetal)" stroke="#fff2cb" stroke-width="1.5"/><circle cx="'+x.toFixed(2)+'" cy="'+y.toFixed(2)+'" r="2.4" fill="#784219"/>').join('');
+  }
+  function frame(elapsed){
+    const t=ease((elapsed-160)/1460);
+    drawRod(0,points(oldLeft,leftEnd,t));
+    drawRod(1,points(rightOld,rightEnd,t));
+    const lampT=ease((elapsed-1900)/1020);
+    lamp[0].setAttribute('transform','translate('+(500-250*lampT).toFixed(1)+' 74)');
+    lamp[1].setAttribute('transform','translate('+(500+250*lampT).toFixed(1)+' 74)');
+    if(elapsed>=1620)section.classList.add('fam-joined');
+    if(elapsed>=2940)section.classList.add('fam-light-on');
+    if(elapsed>=3180)section.classList.add('fam-info-on');
+    if(elapsed>=4440){finished=true;rafId=0;return;}
+  }
+  function start(){
+    if(started)return;started=true;
     if(observer)observer.disconnect();
-    if(scrollHandler){window.removeEventListener('scroll',scrollHandler);window.removeEventListener('resize',scrollHandler);window.removeEventListener('touchmove',scrollHandler)}
-  };
-  const check=()=>{
-    if(shown || site.classList.contains('is-hidden') || site.inert)return;
-    const rect=familySection.getBoundingClientRect();
-    const vh=window.innerHeight||document.documentElement.clientHeight||700;
-    const triggerTop=vh*0.84;
-    const triggerBottom=vh*0.14;
-    if(rect.top <= triggerTop && rect.bottom >= triggerBottom)reveal();
-  };
-  const arm=()=>{
-    if(reduce){familySection.classList.add('is-visible');return;}
-    familySection.classList.add('reveal-ready');
-    if('IntersectionObserver' in window){
-      observer=new IntersectionObserver(entries=>{
-        entries.forEach(entry=>{if(entry.isIntersecting || entry.intersectionRatio>0.22)reveal()})
-      },{threshold:[0.22,0.35],rootMargin:'0px 0px -8% 0px'});
-      observer.observe(familySection);
-    }
-    scrollHandler=()=>check();
-    window.addEventListener('scroll',scrollHandler,{passive:true});
-    window.addEventListener('resize',scrollHandler);
-    window.addEventListener('touchmove',scrollHandler,{passive:true});
-    setTimeout(check,120);
-    setTimeout(check,900);
-  };
-  arm();
-}
+    if(reduce){frame(5000);return;}
+    const t0=performance.now();
+    const animate=now=>{frame(now-t0);if(!finished)rafId=requestAnimationFrame(animate)};
+    rafId=requestAnimationFrame(animate);
+  }
+  function check(){
+    if(started||site.classList.contains('is-hidden')||site.inert)return;
+    const r=section.getBoundingClientRect(),vh=innerHeight||document.documentElement.clientHeight;
+    if(r.top<vh*.82&&r.bottom>vh*.12)start();
+  }
+  function reset(){
+    if(rafId)cancelAnimationFrame(rafId);
+    started=false;finished=false;
+    section.classList.remove('fam-joined','fam-light-on','fam-info-on');
+    frame(0);
+    section.scrollIntoView({behavior:'smooth',block:'center'});
+    setTimeout(start,350);
+  }
+  $id('famReplay')?.addEventListener('click',reset);
+  // Non-JS default always displays text. Hide only after the script has initialized the SVG.
+  frame(0);
+  section.classList.add('fam-armed');
+  if('IntersectionObserver' in window){
+    observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)check()})},{threshold:[0,.08,.25]});
+    observer.observe(section);
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  window.addEventListener('resize',check,{passive:true});
+  window.addEventListener('touchmove',check,{passive:true});
+  setInterval(()=>{if(!started)check()},650);
+  if(reduce){section.classList.add('fam-info-on','fam-light-on','fam-joined');frame(5000)}
+})();
 
 // Compact ambient melody: only plays after a direct user tap.
 let ctx=null,musicTimer=null,note=0;
