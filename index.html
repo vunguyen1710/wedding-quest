@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <script>document.documentElement.classList.add("js-enabled")</script>
-  <link rel="stylesheet" href="style.css?v=66">
+  <link rel="stylesheet" href="style.css?v=68">
   <style id="family-v64-styles">/* V64 — iPhone/desktop spotlight stage. Overrides are self-contained in index.html. */
 .family-mechanism{position:relative;padding:64px 0 90px;scroll-margin-top:75px;overflow:hidden;isolation:isolate}
 .family-mechanism::before{content:"";position:absolute;inset:11% 0 8%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,rgba(163,85,24,.16),transparent 69%)}
@@ -116,6 +116,23 @@
 @keyframes v67-ink{0%{opacity:0;filter:blur(4px);transform:translateY(12px)}100%{opacity:1;filter:none;transform:none}}
 @media(max-width:600px){.v67-section{padding:62px 0 77px}.v67-section h2{font-size:clamp(42px,11vw,58px)}.v67-lead{font-size:12px;margin-bottom:22px}.v67-stage{--sheet-h:585px;height:calc(var(--sheet-h) + 131px)}.v67-top-roll,.v67-bottom-roll{height:60px}.v67-top-roll{top:6px}.v67-bottom-roll{top:62px}.v67-cylinder{inset:8px 4% 7px}.v67-cap{top:5px;width:24px;height:49px}.v67-cap:before{top:13px;left:-11px;width:13px;height:18px}.v67-sheet{top:62px;left:7%;width:86%}.v67-inner{margin:19px 16px;height:calc(100% - 38px);padding:14px 17px}.v67-event h3{font-size:32px}.v67-hour{font-size:35px}.v67-venue{font-size:20px}.v67-address{font-size:10px}.v67-date{font-size:9px}.v67-label{font-size:8px}.v67-monogram{font-size:24px}}
 @media(prefers-reduced-motion:reduce){.v67-section.v67-ready .v67-sheet{clip-path:none!important;animation:none!important}.v67-section.v67-ready .v67-bottom-roll{transform:translate3d(0,var(--sheet-h),0)!important;animation:none!important}.v67-section.v67-ready .v67-inner{opacity:1!important;animation:none!important}}
+</style>
+<style id="v68-real-scroll">
+/* V69 — corrected symmetrical champagne-gold roller photography; 2.5D unrolling stays editable. */
+.v67-section{overflow:hidden}
+.v67-stage{width:min(100%,720px);--sheet-h:590px;height:calc(var(--sheet-h) + 187px);filter:drop-shadow(0 19px 22px rgba(19,7,0,.29))}
+.v67-top-roll,.v67-bottom-roll{left:0;width:100%;height:93px;filter:drop-shadow(0 10px 7px rgba(35,14,3,.3));background-image:url('assets/scroll-champagne-roller-v69.webp');background-size:100% 100%;background-repeat:no-repeat;background-position:center;}
+.v67-top-roll{top:0;z-index:8}
+.v67-bottom-roll{top:77px;z-index:7;transform:translate3d(0,var(--sheet-h),0);filter:drop-shadow(0 -5px 6px rgba(41,21,6,.22)) brightness(.91)}
+.v67-top-roll .v67-cylinder,.v67-top-roll .v67-cap,.v67-bottom-roll .v67-cylinder,.v67-bottom-roll .v67-cap{display:none!important}
+.v67-sheet{left:10.5%;width:79%;top:77px;background:linear-gradient(90deg,rgba(95,49,10,.25),transparent 3.4%,rgba(255,249,214,.10) 50%,transparent 96%,rgba(95,49,10,.19)),url('assets/scroll-champagne-paper-v68.webp') center / 100% 100% no-repeat,#e8b977;box-shadow:inset 0 6px 14px rgba(91,50,15,.25),inset 6px 0 12px rgba(105,64,19,.13),inset -6px 0 12px rgba(105,64,19,.12),0 17px 26px rgba(19,5,0,.28);border-left:1px solid #d5a365;border-right:1px solid #c69252}
+.v67-sheet:before{background:linear-gradient(180deg,rgba(81,41,7,.18),transparent 7%,transparent 95%,rgba(104,64,27,.12))}
+.v67-inner{border-color:rgba(129,79,37,.38);outline-color:rgba(255,239,193,.28);color:#4b2d16}
+.v67-inner:before,.v67-inner:after{display:none}
+.v67-section.v67-ready.v67-open .v67-bottom-roll{animation:v67-down 3.2s cubic-bezier(.12,.58,.23,1) .18s forwards}
+.v67-section.v67-ready.v67-open .v67-sheet{animation:v67-unroll 3.2s cubic-bezier(.12,.58,.23,1) .18s forwards}
+@media(max-width:600px){.v67-stage{--sheet-h:585px;height:calc(var(--sheet-h) + 112px)}.v67-top-roll,.v67-bottom-roll{height:54px}.v67-top-roll{top:0}.v67-bottom-roll{top:45px}.v67-sheet{top:45px;left:10.5%;width:79%}.v67-inner{margin:15px 10px;height:calc(100% - 30px);padding:14px 9px}.v67-inner:before,.v67-inner:after{font-size:15px}.v67-event h3{font-size:clamp(25px,8vw,32px)}.v67-hour{font-size:34px}.v67-venue{font-size:clamp(16px,5.1vw,20px)}.v67-label{letter-spacing:.17em}}
+@media(prefers-reduced-motion:reduce){.v67-section.v67-ready .v67-bottom-roll{transform:translate3d(0,var(--sheet-h),0)!important}}
 </style>
 </head>
 <body>
@@ -301,8 +318,8 @@
               </article>
             </div>
           </div>
-          <div class="v67-top-roll" aria-hidden="true"><span class="v67-cap v67-cap--left"></span><span class="v67-cylinder"></span><span class="v67-cap v67-cap--right"></span></div>
-          <div class="v67-bottom-roll" aria-hidden="true"><span class="v67-cap v67-cap--left"></span><span class="v67-cylinder"></span><span class="v67-cap v67-cap--right"></span></div>
+          <div class="v67-top-roll" aria-hidden="true"></div>
+          <div class="v67-bottom-roll" aria-hidden="true"></div>
         </div>
         <button class="v67-replay" id="v67Replay" type="button">↻ Xem lại cuộn lịch mở</button>
       </section>
@@ -311,7 +328,7 @@
   </div>
 
   <script src="config.js?v=67"></script>
-  <script src="app.js?v=67"></script>
+  <script src="app.js?v=68"></script>
   <script id="family-v64-script">// V63: articulated mechanism animation, real-time SVG geometry, once on viewport entrance.
 (function(){
   const section=document.getElementById('families'), svg=document.getElementById('famArt');
