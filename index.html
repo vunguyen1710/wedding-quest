@@ -134,6 +134,19 @@
 @media(max-width:600px){.v67-stage{--sheet-h:585px;height:calc(var(--sheet-h) + 112px)}.v67-top-roll,.v67-bottom-roll{height:54px}.v67-top-roll{top:0}.v67-bottom-roll{top:45px}.v67-sheet{top:45px;left:10.5%;width:79%}.v67-inner{margin:15px 10px;height:calc(100% - 30px);padding:14px 9px}.v67-inner:before,.v67-inner:after{font-size:15px}.v67-event h3{font-size:clamp(25px,8vw,32px)}.v67-hour{font-size:34px}.v67-venue{font-size:clamp(16px,5.1vw,20px)}.v67-label{letter-spacing:.17em}}
 @media(prefers-reduced-motion:reduce){.v67-section.v67-ready .v67-bottom-roll{transform:translate3d(0,var(--sheet-h),0)!important}}
 </style>
+
+<style id="v70-calendar-bottom-spacing-fix">
+/* V70: remove dead space below the unrolled wedding invitation. */
+.v67-section { padding-bottom: 26px; }
+.v67-section + .footer, .v67-section ~ .footer { margin-top: 0; }
+.footer { margin-top: 0; padding-top: 34px; }
+@media (max-width: 600px) {
+  .v67-section { padding-bottom: 12px; }
+  .v67-stage { height: calc(var(--sheet-h) + 103px); }
+  .v67-replay { margin-top: 3px; }
+  .footer { margin-top: 0; padding-top: 25px; }
+}
+</style>
 </head>
 <body>
   <canvas id="effects" aria-hidden="true"></canvas>

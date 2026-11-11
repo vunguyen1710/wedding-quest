@@ -1,2 +1,1 @@
-Wedding Quest V69 — sửa đầu trục cuộn bên phải bị méo. Hai đầu trục đối xứng; giữ nguyên animation cuộn giấy và nội dung.
-Triển khai GitHub Pages: tải toàn bộ file bên trong thư mục này lên root của repository.
+Wedding Quest v70 — sửa khoảng hở dưới cuộn lịch ở giao diện điện thoại. Mở index.html hoặc triển khai toàn bộ thư mục. Giữ nguyên cuộn lịch, hình ảnh và animation v69.
