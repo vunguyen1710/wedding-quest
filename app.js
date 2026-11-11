@@ -37,7 +37,7 @@ function open(){
  gate.classList.add('seal-activated');
  after(1500,()=>{gate.classList.add('seal-complete','opened');entry.classList.add('opening')});
  after(4000,()=>entry.classList.add('leaving'));
- after(4480,()=>{entry.hidden=true;entry.style.display='none';entry.style.pointerEvents='none';site.inert=false;seal.disabled=false;busy=false;void 0});
+ after(4480,()=>{entry.hidden=true;entry.style.display='none';entry.style.pointerEvents='none';site.inert=false;seal.disabled=false;busy=false;window.dispatchEvent(new Event('scroll'));void 0});
 }
 seal.addEventListener('change',()=>{if(seal.checked)open()});
 entry.addEventListener('click', event=>{
@@ -65,6 +65,45 @@ share?.addEventListener('click',async()=>{
 });
 const theme=$('themeToggle');
 theme?.addEventListener('click',()=>{const next=document.body.dataset.theme==='day'?'night':'day';document.body.dataset.theme=next;theme.textContent=next==='day'?'☾':'☼'});
+
+// V62: reveal luxurious diamond papers from both sides when scrolled into view.
+const familySection=document.getElementById('families');
+if(familySection){
+  const reduce=window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  let shown=false,observer=null,scrollHandler=null;
+  const reveal=()=>{
+    if(shown)return;
+    shown=true;
+    familySection.classList.add('is-visible');
+    if(observer)observer.disconnect();
+    if(scrollHandler){window.removeEventListener('scroll',scrollHandler);window.removeEventListener('resize',scrollHandler);window.removeEventListener('touchmove',scrollHandler)}
+  };
+  const check=()=>{
+    if(shown || site.classList.contains('is-hidden') || site.inert)return;
+    const rect=familySection.getBoundingClientRect();
+    const vh=window.innerHeight||document.documentElement.clientHeight||700;
+    const triggerTop=vh*0.84;
+    const triggerBottom=vh*0.14;
+    if(rect.top <= triggerTop && rect.bottom >= triggerBottom)reveal();
+  };
+  const arm=()=>{
+    if(reduce){familySection.classList.add('is-visible');return;}
+    familySection.classList.add('reveal-ready');
+    if('IntersectionObserver' in window){
+      observer=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{if(entry.isIntersecting || entry.intersectionRatio>0.22)reveal()})
+      },{threshold:[0.22,0.35],rootMargin:'0px 0px -8% 0px'});
+      observer.observe(familySection);
+    }
+    scrollHandler=()=>check();
+    window.addEventListener('scroll',scrollHandler,{passive:true});
+    window.addEventListener('resize',scrollHandler);
+    window.addEventListener('touchmove',scrollHandler,{passive:true});
+    setTimeout(check,120);
+    setTimeout(check,900);
+  };
+  arm();
+}
 
 // Compact ambient melody: only plays after a direct user tap.
 let ctx=null,musicTimer=null,note=0;

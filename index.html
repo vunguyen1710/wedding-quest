@@ -10,68 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <script>document.documentElement.classList.add("js-enabled")</script>
-  <link rel="stylesheet" href="style.css?v=65">
-  <style id="family-v64-styles">/* V64 — iPhone/desktop spotlight stage. Overrides are self-contained in index.html. */
-.family-mechanism{position:relative;padding:64px 0 90px;scroll-margin-top:75px;overflow:hidden;isolation:isolate}
-.family-mechanism::before{content:"";position:absolute;inset:11% 0 8%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,rgba(163,85,24,.16),transparent 69%)}
-.fam-title{text-align:center;margin:0 auto 38px;max-width:760px}
-.fam-overline{display:block;color:#dfb878;font-size:10px;font-weight:600;letter-spacing:.32em;margin-bottom:13px}
-.fam-title h2{font:400 clamp(38px,5.7vw,72px)/1.12 'Playfair Display',Georgia,serif;color:#f4e3c5;letter-spacing:-.045em;margin:0 0 14px}
-.fam-title h2 em{font-weight:400;color:#e8b76b}
-.fam-title p{color:#e2c79f;font-size:13px;line-height:1.85;max-width:570px;margin:0 auto}
-.fam-stage{max-width:1010px;margin:0 auto;position:relative;min-height:500px;padding:0 28px 32px;isolation:isolate}
-.fam-mechanism{width:100%;position:absolute;top:0;left:0;right:0;z-index:3;pointer-events:none}
-.fam-mechanism svg{width:100%;height:auto;display:block;overflow:visible;filter:drop-shadow(0 7px 7px rgba(30,12,0,.20))}
-.fam-center-spark{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.45);transition:opacity .48s ease,transform .55s ease}
-.family-mechanism.fam-joined .fam-center-spark{opacity:1;transform:scale(1)}
-.fam-lamp .fam-light-cone,.fam-lamp .fam-light-floor,.fam-lamp .fam-lamp-glimmer{opacity:0;transition:opacity .95s ease}
-.family-mechanism.fam-light-on .fam-lamp .fam-light-cone{opacity:.86}
-.family-mechanism.fam-light-on .fam-lamp .fam-light-floor{opacity:.4}
-.family-mechanism.fam-light-on .fam-lamp .fam-lamp-glimmer{opacity:.95}
-.fam-reveal-details{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,5vw,96px);position:relative;z-index:1;align-items:stretch;padding-top:202px}
-.fam-details{position:relative;min-width:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:20px 18px 24px;border:1px solid rgba(228,179,109,.14);border-radius:10px;background:linear-gradient(180deg,rgba(145,79,22,.10),rgba(35,15,4,.24));box-shadow:0 18px 40px rgba(12,5,0,.07);opacity:1;transform:none;transition:opacity 1.15s ease,transform 1.15s cubic-bezier(.19,.82,.18,1)}
-.fam-details::before{content:"";position:absolute;inset:-70px -6px 0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 0,rgba(255,211,128,.0),transparent 69%);transition:background .9s}
-.family-mechanism.fam-light-on .fam-details::before{background:radial-gradient(ellipse at 50% 0,rgba(255,205,123,.2),rgba(255,211,145,.04) 52%,transparent 70%)}
-.family-mechanism.fam-armed:not(.fam-info-on) .fam-details{opacity:0;transform:translateY(24px)}
-.family-mechanism.fam-info-on .fam-details{opacity:1;transform:translateY(0)}
-.family-mechanism.fam-info-on .fam-details-bride{transition-delay:.16s}
-.fam-info-kicker{display:block;font-size:10px;color:#d5a86f;letter-spacing:.28em;margin-bottom:8px;font-weight:600}
-.fam-details h3{display:block;font:400 clamp(32px,4.5vw,52px)/1.17 'Playfair Display',Georgia,serif;color:#f4d59f;margin:0 0 21px}
-.fam-info{display:block;width:100%;margin:0 0 20px;overflow-wrap:anywhere}
-.fam-info>span{display:block;width:100%;color:#c99453;font-size:10px;line-height:1.5;letter-spacing:.19em;font-weight:600;margin:0 0 7px}
-.fam-info strong{font:400 clamp(16px,2.3vw,26px)/1.45 'Playfair Display',Georgia,serif;color:#fff2d5;display:block;width:100%}
-.fam-info p{display:block;margin:0;color:#e9cc9c;font-size:clamp(12px,1.5vw,15px);line-height:1.75}
-.fam-footnote{text-align:center;font:italic 400 20px/1.55 'Playfair Display',Georgia,serif;color:#e3bc7a;margin:0 auto 12px}
-.fam-replay{display:block;min-height:40px;margin:12px auto 0;color:#ead0a1;font-size:11px;letter-spacing:.06em;padding:9px 17px;border:1px solid rgba(225,179,109,.4);border-radius:22px;background:rgba(51,24,9,.56)}
-@media(max-width:760px){
- .family-mechanism{padding:50px 0 64px;width:calc(100% - 32px)}
- .fam-title{margin-bottom:26px}
- .fam-title h2{font-size:clamp(33px,8.6vw,46px)}
- .fam-title p{font-size:12px;line-height:1.7}
- .fam-stage{min-height:0;padding:0 0 18px}
- .fam-mechanism{top:0;width:100%;left:0;right:0}
- .fam-reveal-details{padding-top:117px;gap:12px}
- .fam-details{padding:17px 7px 12px;border-radius:7px}
- .fam-info-kicker{font-size:9px;letter-spacing:.2em;margin-bottom:7px}
- .fam-details h3{font-size:clamp(25px,7vw,34px);margin-bottom:14px}
- .fam-info{margin-bottom:16px}
- .fam-info>span{font-size:9px;letter-spacing:.10em;margin-bottom:5px}
- .fam-info strong{font-size:clamp(13px,3.8vw,17px);line-height:1.42}
- .fam-info p{font-size:clamp(11px,3vw,13px);line-height:1.55}
- .fam-footnote{font-size:16px;margin-top:15px}
- .fam-replay{font-size:10px}
-}
-@media(max-width:360px){.fam-reveal-details{gap:8px;padding-top:104px}.fam-details{padding:14px 5px 10px}.fam-info strong{font-size:12.5px}}
-@media(prefers-reduced-motion:reduce){.fam-center-spark,.fam-lamp .fam-light-cone,.fam-lamp .fam-light-floor,.fam-lamp .fam-lamp-glimmer,.fam-details{transition:none!important}.family-mechanism.fam-armed .fam-details{opacity:1!important;transform:none!important}}
-
-
-/* V65 — matched golden image titles, keeping both lamps and articulated rods intact. */
-#families .fam-info-kicker{display:none!important}
-#families .fam-details .fam-art-title{display:block;width:calc(100% + 22px);max-width:440px;height:auto;object-fit:contain;margin:-32px auto -14px;position:relative;z-index:2;filter:drop-shadow(0 7px 9px rgba(30,10,1,.23));pointer-events:none}
-#families .fam-details h3.fam-title-screenreader{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}
-@media(max-width:760px){#families .fam-details .fam-art-title{width:calc(100% + 12px);max-width:none;margin:-18px auto -5px}#families .fam-details{padding-top:16px}}
-@media(max-width:360px){#families .fam-details .fam-art-title{width:calc(100% + 8px)}}
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <canvas id="effects" aria-hidden="true"></canvas>
@@ -148,161 +87,71 @@
           <div><strong id="days">000</strong><span>NGÀY</span></div><i>:</i><div><strong id="hours">00</strong><span>GIỜ</span></div><i>:</i><div><strong id="mins">00</strong><span>PHÚT</span></div><i>:</i><div><strong id="secs">00</strong><span>GIÂY</span></div>
         </div>
       </section>
-
-
-      <!-- V63: Two articulated gold rods join; antique brass lanterns reveal both families -->
-      <section id="families" class="family-mechanism section-wrap" aria-labelledby="familiesTitle">
-        <div class="fam-title">
-          <span class="fam-overline">TRÂN TRỌNG KÍNH MỜI</span>
-          <h2 id="familiesTitle">Từ hai nhà <em>thành một duyên</em></h2>
-          <p>Hai gia đình hân hoan kính mời quý khách chung vui trong ngày trọng đại của Vũ &amp; Thương.</p>
+      <section id="families" class="family-diamond-section section-wrap" aria-labelledby="familiesTitle">
+        <div class="family-diamond-heading">
+          <span class="family-diamond-kicker">TRÂN TRỌNG KÍNH MỜI</span>
+          <h2 id="familiesTitle" class="family-diamond-title"><span>Hai nhà,</span> <em>một duyên</em></h2>
+          <p>Hai gia đình hân hoan gửi đến bạn lời mời chung vui trong ngày trọng đại của Vũ &amp; Thương.</p>
         </div>
-        <div class="fam-stage">
-        <div class="fam-mechanism" aria-hidden="true">
-          <svg id="famArt" viewBox="0 0 1000 252" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="famMetal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0c0"/><stop offset=".27" stop-color="#eac589"/><stop offset=".55" stop-color="#b87d38"/><stop offset=".82" stop-color="#f5d396"/><stop offset="1" stop-color="#68401a"/></linearGradient>
-              <linearGradient id="famBeam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe9b5" stop-opacity=".55"/><stop offset=".55" stop-color="#f7cb83" stop-opacity=".19"/><stop offset="1" stop-color="#ffda98" stop-opacity="0"/></linearGradient>
-              <radialGradient id="famLampGold"><stop offset="0" stop-color="#fff8d7"/><stop offset=".35" stop-color="#f7d48a"/><stop offset="1" stop-color="#8f5527"/></radialGradient>
-              <filter id="famGlow"><feGaussianBlur stdDeviation="8"/></filter>
-              <filter id="famSmallGlow"><feGaussianBlur stdDeviation="2.8"/></filter>
-            </defs>
-            <g opacity=".95">
-              <path id="famRodLeftShade" d="M54,74 L85,36 L121,106 L159,42 L196,74" fill="none" stroke="#4d2a0d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
-              <path id="famRodRightShade" d="M946,74 L915,36 L879,106 L841,42 L804,74" fill="none" stroke="#4d2a0d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
-              <path id="famRodLeft" d="M54,74 L85,36 L121,106 L159,42 L196,74" fill="none" stroke="url(#famMetal)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-              <path id="famRodRight" d="M946,74 L915,36 L879,106 L841,42 L804,74" fill="none" stroke="url(#famMetal)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-              <path id="famRodLeftShine" d="M54,74 L85,36 L121,106 L159,42 L196,74" fill="none" stroke="#fff0b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
-              <path id="famRodRightShine" d="M946,74 L915,36 L879,106 L841,42 L804,74" fill="none" stroke="#fff0b9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
-              <g id="famJointsLeft"></g><g id="famJointsRight"></g>
-              <circle cx="54" cy="74" r="14" fill="url(#famMetal)" stroke="#ffdea0" stroke-width="2"/>
-              <circle cx="946" cy="74" r="14" fill="url(#famMetal)" stroke="#ffdea0" stroke-width="2"/>
-              <circle cx="54" cy="74" r="4" fill="#674014"/>
-              <circle cx="946" cy="74" r="4" fill="#674014"/>
-            </g>
-            <g class="fam-center-spark">
-              <circle cx="500" cy="74" r="29" fill="#e4ad62" opacity=".36" filter="url(#famGlow)"/>
-              <circle cx="500" cy="74" r="17" fill="url(#famLampGold)" stroke="#fff2d2" stroke-width="1.4"/>
-              <circle cx="500" cy="74" r="7" fill="#9c2c28"/>
-              <path d="M496 74h8 M500 70v8" stroke="#ffe7b9" stroke-width="1.5"/>
-            </g>
-            <g id="famLampLeft" class="fam-lamp fam-lamp-left" transform="translate(500 74)">
-              <path class="fam-light-cone" d="M-12 18 L-188 236 L182 236 L12 18 Z" fill="url(#famBeam)"/>
-              <ellipse class="fam-light-floor" cx="0" cy="228" rx="164" ry="14" fill="#ffd58a" filter="url(#famGlow)" opacity=".45"/>
-              <path d="M-17 0v14 M17 0v14" stroke="#b07837" stroke-width="5"/>
-              <rect x="-28" y="-10" width="56" height="20" rx="8" fill="url(#famMetal)" stroke="#ffe7b5" stroke-width="1.8"/>
-              <path d="M-27 14Q0 5 27 14L46 36Q0 64-46 36Z" fill="url(#famMetal)" stroke="#fff0b9" stroke-width="2"/>
-              <ellipse cx="0" cy="39" rx="44" ry="10" fill="#fbd38b" stroke="#73411b" stroke-width="3"/>
-              <ellipse cx="0" cy="39" rx="27" ry="5.5" fill="#fff4c9" opacity=".75"/>
-              <circle class="fam-lamp-glimmer" cx="0" cy="45" r="8" fill="#fff5ca" filter="url(#famSmallGlow)"/>
-            </g>
-            <g id="famLampRight" class="fam-lamp fam-lamp-right" transform="translate(500 74)">
-              <path class="fam-light-cone" d="M-12 18 L-188 236 L182 236 L12 18 Z" fill="url(#famBeam)"/>
-              <ellipse class="fam-light-floor" cx="0" cy="228" rx="164" ry="14" fill="#ffd58a" filter="url(#famGlow)" opacity=".45"/>
-              <path d="M-17 0v14 M17 0v14" stroke="#b07837" stroke-width="5"/>
-              <rect x="-28" y="-10" width="56" height="20" rx="8" fill="url(#famMetal)" stroke="#ffe7b5" stroke-width="1.8"/>
-              <path d="M-27 14Q0 5 27 14L46 36Q0 64-46 36Z" fill="url(#famMetal)" stroke="#fff0b9" stroke-width="2"/>
-              <ellipse cx="0" cy="39" rx="44" ry="10" fill="#fbd38b" stroke="#73411b" stroke-width="3"/>
-              <ellipse cx="0" cy="39" rx="27" ry="5.5" fill="#fff4c9" opacity=".75"/>
-              <circle class="fam-lamp-glimmer" cx="0" cy="45" r="8" fill="#fff5ca" filter="url(#famSmallGlow)"/>
-            </g>
-          </svg>
-        </div>
-        <div class="fam-reveal-details">
-          <section class="fam-details fam-details-groom" aria-labelledby="groomFamilyTitle">
-            <h3 id="groomFamilyTitle" class="fam-title-screenreader">Nhà trai</h3><img class="fam-art-title" src="assets/family-title-groom-v65.webp" width="848" height="631" alt="Gia đình nhà trai" decoding="async" loading="eager">
-            <div class="fam-info"><span>ÔNG BÀ</span><strong id="groomParents">Thông tin đang cập nhật</strong></div>
-            <div class="fam-info"><span>ĐỊA CHỈ</span><p id="groomFamilyAddress">Địa chỉ nhà trai đang cập nhật</p></div>
-            <div class="fam-info"><span>THỜI GIAN</span><p id="groomFamilyTime">Đang cập nhật</p></div>
+
+        <div class="family-diamond-stage">
+          <section class="family-diamond-card family-diamond-card--left" aria-labelledby="groomFamilyTitle">
+            <div class="family-diamond-card-inner">
+              <span class="family-diamond-card-kicker">GROOM'S FAMILY</span>
+              <h3 id="groomFamilyTitle">Nhà trai</h3>
+              <div class="family-diamond-list">
+                <div class="family-diamond-row">
+                  <span>ĐẠI DIỆN</span>
+                  <strong id="groomParents">Thông tin đang cập nhật</strong>
+                </div>
+                <div class="family-diamond-row">
+                  <span>ĐỊA CHỈ</span>
+                  <p id="groomFamilyAddress">Địa chỉ nhà trai đang cập nhật</p>
+                </div>
+                <div class="family-diamond-row">
+                  <span>THỜI GIAN</span>
+                  <p id="groomFamilyTime">Đang cập nhật</p>
+                </div>
+              </div>
+            </div>
           </section>
-          <section class="fam-details fam-details-bride" aria-labelledby="brideFamilyTitle">
-            <h3 id="brideFamilyTitle" class="fam-title-screenreader">Nhà gái</h3><img class="fam-art-title" src="assets/family-title-bride-v65.webp" width="848" height="631" alt="Gia đình nhà gái" decoding="async" loading="eager">
-            <div class="fam-info"><span>ÔNG BÀ</span><strong id="brideParents">Thông tin đang cập nhật</strong></div>
-            <div class="fam-info"><span>ĐỊA CHỈ</span><p id="brideFamilyAddress">Địa chỉ nhà gái đang cập nhật</p></div>
-            <div class="fam-info"><span>THỜI GIAN</span><p id="brideFamilyTime">Đang cập nhật</p></div>
+
+          <div class="family-diamond-center" aria-hidden="true">
+            <span class="family-diamond-center-line"></span>
+            <span class="family-diamond-center-heart">♥</span>
+            <span class="family-diamond-center-line"></span>
+          </div>
+
+          <section class="family-diamond-card family-diamond-card--right" aria-labelledby="brideFamilyTitle">
+            <div class="family-diamond-card-inner">
+              <span class="family-diamond-card-kicker">BRIDE'S FAMILY</span>
+              <h3 id="brideFamilyTitle">Nhà gái</h3>
+              <div class="family-diamond-list">
+                <div class="family-diamond-row">
+                  <span>ĐẠI DIỆN</span>
+                  <strong id="brideParents">Thông tin đang cập nhật</strong>
+                </div>
+                <div class="family-diamond-row">
+                  <span>ĐỊA CHỈ</span>
+                  <p id="brideFamilyAddress">Địa chỉ nhà gái đang cập nhật</p>
+                </div>
+                <div class="family-diamond-row">
+                  <span>THỜI GIAN</span>
+                  <p id="brideFamilyTime">Đang cập nhật</p>
+                </div>
+              </div>
+            </div>
           </section>
         </div>
-        </div><!-- /fam-stage -->
-        <p class="fam-footnote">Hai gia đình, một niềm hạnh phúc.</p>
-        <button id="famReplay" class="fam-replay" type="button" aria-label="Xem lại hiệu ứng kết nối hai gia đình">↻ Xem lại khoảnh khắc kết nối</button>
+
+        <p class="family-diamond-closing">Sự hiện diện của bạn là niềm vinh hạnh và hạnh phúc của hai gia đình.</p>
       </section>
 </main>
     <footer class="footer"><span class="footer-ornament">✦</span><div class="footer-names" id="footerNames">Vũ &amp; Thương</div><p>Hẹn gặp bạn trong ngày hạnh phúc.</p><span id="footerDate">14 · 02 · 2027</span><div class="footer-bottom"><span>MADE WITH ♡ • WEDDING QUEST</span><a href="#top">Lên đầu trang ↑</a></div></footer>
   </div>
 
-  <script src="config.js?v=65"></script>
-  <script src="app.js?v=65"></script>
-  <script id="family-v64-script">// V63: articulated mechanism animation, real-time SVG geometry, once on viewport entrance.
-(function(){
-  const section=document.getElementById('families'), svg=document.getElementById('famArt');
-  if(!section||!svg)return;
-  const $id=id=>document.getElementById(id);
-  const pathIds=[['famRodLeft','famRodLeftShade','famRodLeftShine'],['famRodRight','famRodRightShade','famRodRightShine']];
-  const joints=[$id('famJointsLeft'),$id('famJointsRight')];
-  const lamp=[$id('famLampLeft'),$id('famLampRight')];
-  const reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let started=false,finished=false,rafId=0,completeTimer=0,observer=null;
-  const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
-  const ease=t=>1-Math.pow(1-clamp(t),3);
-  const oldLeft=[[54,74],[85,36],[121,106],[159,42],[196,74]];
-  const rightOld=oldLeft.map(([x,y])=>[1000-x,y]);
-  const leftEnd=[[54,74],[166,74],[278,74],[389,74],[500,74]];
-  const rightEnd=leftEnd.map(([x,y])=>[1000-x,y]);
-  function points(start,end,t){return start.map((p,i)=>[p[0]+(end[i][0]-p[0])*t,p[1]+(end[i][1]-p[1])*t])}
-  function drawRod(side,pts){
-    const d=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(2)+','+p[1].toFixed(2)).join(' ');
-    pathIds[side].forEach(id=>$id(id).setAttribute('d',d));
-    joints[side].innerHTML=pts.slice(1,-1).map(([x,y])=>'<circle cx="'+x.toFixed(2)+'" cy="'+y.toFixed(2)+'" r="7" fill="url(#famMetal)" stroke="#fff2cb" stroke-width="1.5"/><circle cx="'+x.toFixed(2)+'" cy="'+y.toFixed(2)+'" r="2.4" fill="#784219"/>').join('');
-  }
-  function frame(elapsed){
-    const t=ease((elapsed-160)/1460);
-    drawRod(0,points(oldLeft,leftEnd,t));
-    drawRod(1,points(rightOld,rightEnd,t));
-    const lampT=ease((elapsed-1900)/1020);
-    lamp[0].setAttribute('transform','translate('+(500-250*lampT).toFixed(1)+' 74)');
-    lamp[1].setAttribute('transform','translate('+(500+250*lampT).toFixed(1)+' 74)');
-    if(elapsed>=1620)section.classList.add('fam-joined');
-    if(elapsed>=2940)section.classList.add('fam-light-on');
-    if(elapsed>=3180)section.classList.add('fam-info-on');
-    if(elapsed>=4440){finished=true;rafId=0;return;}
-  }
-  function start(){
-    if(started)return;started=true;
-    if(observer)observer.disconnect();
-    if(reduce){frame(5000);return;}
-    const t0=performance.now();
-    const animate=now=>{frame(now-t0);if(!finished)rafId=requestAnimationFrame(animate)};
-    rafId=requestAnimationFrame(animate);
-  }
-  function check(){
-    if(started||document.getElementById('site').classList.contains('is-hidden')||document.getElementById('site').inert)return;
-    const r=section.getBoundingClientRect(),vh=window.innerHeight||document.documentElement.clientHeight;
-    if(r.top<vh*.82&&r.bottom>vh*.12)start();
-  }
-  function reset(){
-    if(rafId)cancelAnimationFrame(rafId);
-    started=false;finished=false;
-    section.classList.remove('fam-joined','fam-light-on','fam-info-on');
-    frame(0);
-    section.scrollIntoView({behavior:'smooth',block:'center'});
-    setTimeout(start,350);
-  }
-  $id('famReplay')?.addEventListener('click',reset);
-  // Non-JS default always displays text. Hide only after the script has initialized the SVG.
-  frame(0);
-  section.classList.add('fam-armed');
-  if('IntersectionObserver' in window){
-    observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)check()})},{threshold:[0,.08,.25]});
-    observer.observe(section);
-  }
-  window.addEventListener('scroll',check,{passive:true});
-  window.addEventListener('resize',check,{passive:true});
-  window.addEventListener('touchmove',check,{passive:true});
-  setInterval(()=>{if(!started)check()},650);
-  if(reduce){section.classList.add('fam-info-on','fam-light-on','fam-joined');frame(5000)}
-})();
-
-</script>
-  <script src="v16.js?v=65"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script src="v16.js"></script>
 </body>
 </html>
